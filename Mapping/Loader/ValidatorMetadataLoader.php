@@ -83,6 +83,14 @@ class ValidatorMetadataLoader implements LoaderInterface
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getAllClassMetadata()
+    {
+        return [];
+    }
+
+    /**
      * Is this constraint making the related property required?
      *
      * @param Constraint $constraint
