@@ -53,6 +53,10 @@ class DateTimeNormalizer implements NormalizerInterface, DenormalizerInterface
      */
     public function denormalize($data, $class, $format = null, array $context = [])
     {
-        return new \DateTime($data);
+        try {
+            return new \DateTime($data);
+        } catch (\Exception $e) {
+            // Return null if the value cannot be parsed
+        }
     }
 }
